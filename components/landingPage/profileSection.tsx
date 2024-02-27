@@ -1,5 +1,4 @@
 import { NextComponentType } from "next";
-import styles from "./profileSection.module.scss";
 
 interface Props {}
 

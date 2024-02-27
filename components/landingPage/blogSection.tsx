@@ -1,5 +1,4 @@
 import { NextComponentType } from 'next'
-import styles from "./blogSection.module.scss";
 
 interface Props {}
 

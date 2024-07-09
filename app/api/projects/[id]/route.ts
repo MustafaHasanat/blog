@@ -1,4 +1,4 @@
-import { db } from "@/app/_scripts/firebase";
+import { db } from "@/libs/configs/firebase";
 import {
     deleteDoc,
     doc,

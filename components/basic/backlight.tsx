@@ -1,6 +1,6 @@
 "use client";
 
-import { GlobalContext } from "@/context/global-context";
+import { GlobalContext } from "@/libs/context/global-context";
 import { Box, useTheme } from "@mui/material";
 import { useContext } from "react";
 
@@ -14,15 +14,15 @@ const Backlight = () => {
             onClick={toggleModalIsOpen}
             sx={{
                 position: "fixed",
+                width: "100vw",
                 height: "100vh",
                 zIndex: modalIsOpen ? 100 : -100,
                 backgroundColor: modalIsOpen
                     ? theme.palette.neutral.dark
                     : "transparent",
-                top: 0,
-                width: "100vw",
+                top: "0",
+                left: "translateX(-50%) translateY(-50%)",
                 opacity: 0.7,
-                left: "translateX(-50%)",
                 border: "none",
             }}
         />

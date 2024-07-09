@@ -127,7 +127,7 @@ const Footer = ({}) => {
                                 width: { mobile: "50%", tablet: "15%" },
                                 aspectRatio: "3 / 1",
                                 margin: 3,
-                                transition: "0.3 ease",
+                                transition: "transform 0.3 ease",
 
                                 "&:hover": {
                                     transform: "scale(1.2)",

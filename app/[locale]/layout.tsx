@@ -1,11 +1,12 @@
-import "./globals.css";
+import "@/libs/styles/global.css";
 import type { Metadata } from "next";
-import Header from "@/components/main/header";
-import Footer from "@/components/main/footer";
-import { Providers } from "../../context/providers";
-import Body from "@/components/main/body";
-import Backlight from "@/components/main/backlight";
+import Header from "@/components/basic/header";
+import Footer from "@/components/basic/footer";
+import { Providers } from "../../libs/context/providers";
+import Body from "@/components/basic/body";
+import Backlight from "@/components/basic/backlight";
 import { Locale, i18n } from "@/libs/configs/i18n.config";
+import Script from "next/script";
 
 export const metadata: Metadata = {
     title: "Mustafa Alhasanat",
@@ -33,6 +34,8 @@ export default function RootLayout({
                     <Footer />
                 </Body>
             </Providers>
+
+            <Script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></Script>
         </html>
     );
 }

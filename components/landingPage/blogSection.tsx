@@ -1,9 +1,10 @@
-import { NextComponentType } from 'next'
+import { Box } from "@mui/material";
+import { NextComponentType } from "next";
 
 interface Props {}
 
 const BlogSection: NextComponentType<Props> = ({}) => {
-  return <section>blogSection</section>
-}
+    return <Box component="section">blogSection</Box>;
+};
 
-export default BlogSection
+export default BlogSection;

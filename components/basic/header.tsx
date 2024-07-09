@@ -2,18 +2,19 @@
 
 import { AppBar, Container, Grid } from "@mui/material";
 import { useContext } from "react";
-import Burger from "../header/burger";
-import { GlobalContext } from "@/context/global-context";
-import ControlButtons from "../header/controlButtons";
+import Burger from "./header/burger";
+import { GlobalContext } from "@/libs/context/global-context";
+import ControlButtons from "./header/controlButtons";
 import constants from "@/libs/constants";
 
 import useLocale from "@/hooks/useLocale";
-import NavItem from "../header/navItem";
+import NavItem from "./header/navItem";
 
 const Header = () => {
-    const transition = "0.5s ease-out";
+    const transition = "0.3s ease-out";
     const { modalIsOpen } = useContext(GlobalContext);
-    const { getDictLocales } = useLocale();
+    const { getDictLocales, getLocale } = useLocale();
+    const locale = getLocale();
     const { navItems } = getDictLocales();
 
     return (
@@ -24,13 +25,15 @@ const Header = () => {
                 boxShadow: 0,
                 bgcolor: "transparent",
                 backgroundImage: "none",
-                transition,
+                transition: "top " + transition,
                 top: modalIsOpen ? "10vh" : 20,
-                left: "50%",
-                transform: "translateX(-50%)",
+                left: locale === "en" ? "50%" : "0",
+                right: locale === "en" ? "0" : "50%",
+                transform: `translateX(${locale === "en" ? "-50%" : "50%"})`,
                 overflow: "hidden",
                 zIndex: 100,
                 width: "fit-content",
+                direction: "ltr"
             }}
         >
             <Container
@@ -39,7 +42,7 @@ const Header = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    transition,
+                    transition: `width ${transition}, height ${transition}, background-color ${transition}, box-shadow ${transition}`,
                     width: modalIsOpen
                         ? { mobile: "70vw", desktop: "30vw" }
                         : "95vw",
@@ -47,7 +50,7 @@ const Header = () => {
                     borderRadius: 5,
                     overflow: "hidden",
                     p: 3,
-                    bgcolor:
+                    backgroundColor:
                         theme.palette.mode === "light"
                             ? "#ffffff66"
                             : "#00000066",
@@ -65,9 +68,6 @@ const Header = () => {
                     direction="column"
                     justifyContent="center"
                     overflow="hidden"
-                    sx={{
-                        transition,
-                    }}
                 >
                     <Grid
                         container
@@ -88,7 +88,7 @@ const Header = () => {
                             sx={{
                                 overflow: "hidden",
                                 flexWrap: "nowrap",
-                                transition,
+                                transition: "width " + transition,
                             }}
                         >
                             <ControlButtons />
@@ -111,7 +111,7 @@ const Header = () => {
                             flexWrap: "nowrap",
                         }}
                     >
-                        {constants.navItems.map((item, index) => (
+                        {constants.navItems(locale).map((item, index) => (
                             <NavItem
                                 item={item}
                                 key={`${navItems[item.phrase]}+${index}`}

@@ -1,14 +1,15 @@
-import CoursesSection from "@/components/about/coursesSection";
-import EducationSection from "@/components/about/educationSection";
-import ExperienceSection from "@/components/about/experienceSection";
-import LanguagesSection from "@/components/about/languagesSection";
-import PublicationsSection from "@/components/about/publicationsSection";
-import SkillsSection from "@/components/about/skillsSection";
-import StorySection from "@/components/about/storySection";
+import CoursesSection from "@/components/aboutPage/coursesSection";
+import EducationSection from "@/components/aboutPage/educationSection";
+import ExperienceSection from "@/components/aboutPage/experienceSection";
+import LanguagesSection from "@/components/aboutPage/languagesSection";
+import PublicationsSection from "@/components/aboutPage/publicationsSection";
+import SkillsSection from "@/components/aboutPage/skillsSection";
+import StorySection from "@/components/aboutPage/storySection";
+import Main from "@/components/basic/main";
 
 export default function AboutPage() {
     return (
-        <main>
+        <Main>
             <StorySection />
             <EducationSection />
             <ExperienceSection />
@@ -16,6 +17,6 @@ export default function AboutPage() {
             <PublicationsSection />
             <CoursesSection />
             <LanguagesSection />
-        </main>
+        </Main>
     );
 }

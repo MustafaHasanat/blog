@@ -1,3 +1,5 @@
+import Main from "@/components/basic/main";
+
 export default function AdminPage() {
-    return <main></main>;
+    return <Main>admin page</Main>;
 }

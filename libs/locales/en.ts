@@ -1,4 +1,16 @@
-const en: any = {
+const en = {
+    navItems: {
+        blog: "My Blog",
+        portfolio: "My Portfolio",
+        about: "About Me",
+        contact: "Contact Me",
+    },
+    blog: {
+        profile: {
+            name: "Mustafa Alhasanat",
+            role: "Full-stack Software Engineer",
+        },
+    },
     footer: {
         profiles: "Profiles",
         profilesTitles: {
@@ -18,12 +30,6 @@ const en: any = {
         },
         quickLinks: "Quick Links",
         quote: "Programmer [noun]: A machine that converts coffee into code.",
-    },
-    navItems: {
-        blog: "My Blog",
-        portfolio: "My Portfolio",
-        about: "About Me",
-        contact: "Contact Me",
     },
 };
 

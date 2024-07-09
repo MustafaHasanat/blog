@@ -1,10 +1,13 @@
 "use client";
 
+import useLocale from "@/hooks/useLocale";
 import { Box, useTheme } from "@mui/material";
 import { ReactNode } from "react";
 
 const Body = ({ children }: { children: ReactNode }) => {
     const theme = useTheme();
+    const { getLocale } = useLocale();
+    const locale = getLocale();
 
     return (
         <Box
@@ -20,8 +23,9 @@ const Body = ({ children }: { children: ReactNode }) => {
                         : " -300px, #fdf9ff 500px")
                 })`,
                 minHeight: "100vh",
-                p: "100px 0 0 0",
+                p: "150px 0 0 0",
                 m: 0,
+                direction: locale === "en" ? "ltr" : "rtl",
             }}
         >
             {children}

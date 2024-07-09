@@ -1,4 +1,4 @@
-import { GlobalContext } from "@/context/global-context";
+import { GlobalContext } from "@/libs/context/global-context";
 import useLocale from "@/hooks/useLocale";
 import { Button, useTheme } from "@mui/material";
 import { useRouter } from "next/navigation";
@@ -14,12 +14,9 @@ interface Props {
 const NavItem = ({ item: { path, phrase } }: Props) => {
     const router = useRouter();
     const { toggleModalIsOpen } = useContext(GlobalContext);
-    const { getDictLocales, getLocale } = useLocale();
+    const { getDictLocales } = useLocale();
     const { navItems } = getDictLocales();
     const theme = useTheme();
-    const locale = getLocale();
-
-    const newPath = locale === "ar" ? "ar/" + path : path;
 
     return (
         <Button
@@ -31,7 +28,7 @@ const NavItem = ({ item: { path, phrase } }: Props) => {
                 color: theme.palette.secondary.contrastText,
             }}
             onClick={() => {
-                router.push(newPath);
+                router.push(path);
                 toggleModalIsOpen();
             }}
         >

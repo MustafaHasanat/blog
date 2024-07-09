@@ -1,4 +1,4 @@
-import { GlobalContext } from "@/context/global-context";
+import { GlobalContext } from "@/libs/context/global-context";
 import { Button, useMediaQuery, useTheme } from "@mui/material";
 import { useContext, useRef } from "react";
 import { Transition } from "react-transition-group";
@@ -97,7 +97,6 @@ const Burger = () => {
                 gap: burgerGap,
                 borderRadius: "10px",
                 overflow: "hidden",
-                transition: "0.3s ease-out",
                 p: 0,
             }}
             onClick={toggleModalIsOpen}

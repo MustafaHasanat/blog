@@ -31,6 +31,7 @@ const getDesignTokens = (colorMode: PaletteMode) => ({
     palette: {
         mode: colorMode,
         neutral: {
+            main: "#2b2b2b",
             dark: "#2b2b2b",
             light: "#fff",
         },

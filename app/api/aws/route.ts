@@ -1,4 +1,4 @@
-import { getImage } from "@/app/_scripts/s3Bucket";
+import { getImage } from "@/libs/_scripts/s3Bucket";
 
 export async function GET() {
     try {

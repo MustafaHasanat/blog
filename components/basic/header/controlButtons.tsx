@@ -1,4 +1,4 @@
-import { GlobalContext } from "@/context/global-context";
+import { GlobalContext } from "@/libs/context/global-context";
 import useLocale from "@/hooks/useLocale";
 import constants from "@/libs/constants";
 import { Button, Tooltip, useTheme } from "@mui/material";
@@ -9,7 +9,7 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import Image from "next/image";
 
 const ControlButtons = () => {
-    const transition = "0.5s ease-in";
+    const transition = "0.3s ease-in";
     const theme = useTheme();
     const { toggleLocale, getLocale } = useLocale();
     const { toggleColorMode, modalIsOpen } = useContext(GlobalContext);
@@ -23,7 +23,6 @@ const ControlButtons = () => {
                     }
                     sx={{
                         position: "relative",
-                        transition,
                         p: {
                             mobile: "0",
                             tablet: "0 15px",
@@ -37,7 +36,6 @@ const ControlButtons = () => {
                         alt="bmc-icon"
                         fill={true}
                         style={{
-                            transition,
                             borderRadius: "10px",
                             backgroundColor: theme.palette.neutral.light,
                         }}
@@ -51,7 +49,6 @@ const ControlButtons = () => {
                         toggleLocale();
                     }}
                     sx={{
-                        transition,
                         width: {
                             mobile: 20,
                             tablet: 50,
@@ -69,12 +66,11 @@ const ControlButtons = () => {
                 >
                     <TranslateIcon
                         sx={{
-                            transition,
+                            transition: "color " + transition,
                             color:
                                 theme.palette.mode === "dark"
                                     ? theme.palette.neutral.light
                                     : theme.palette.primary.main,
-                            opacity: modalIsOpen ? 0 : 1,
                         }}
                     />
                 </Button>

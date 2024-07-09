@@ -1,4 +1,4 @@
-import { ProjectType } from "@/enums/projects";
+import { ProjectType } from "@/libs/enums/projects";
 
 export interface ProjectModel {
     title: string;
